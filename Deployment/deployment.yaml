@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+    name: service-a
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: service-a
+    template:
+        metadata:
+            labels:
+                app: service-a
+        spec:
+            containers:
+            - name: service-a
+              image: sachin640/testapp1:0.0.1
+              ports:
+              - containerPort: 8080
